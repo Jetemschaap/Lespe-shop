@@ -108,10 +108,11 @@ export default function ShopPage() {
       </div>
 
       <div
-        className="flex gap-10 items-start"
-        style={{ marginTop: "220px" }}
+  className="flex gap-10 items-start"
+  style={{ marginTop: "220px", maxWidth: "1200px", width: "100%" }}
+>
       >
-        <div style={{ width: "900px" }}>
+        <div style={{ width: "500px" }}>
           <img
             src={selectedImage}
             alt="catalogus"
@@ -123,7 +124,7 @@ export default function ShopPage() {
           />
         </div>
 
-        <div style={{ width: "700px" }}>
+        <div style={{ width: "450px" }}>
           <div
             style={{
               display: "flex",
