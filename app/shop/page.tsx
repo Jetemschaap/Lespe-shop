@@ -111,7 +111,7 @@ export default function ShopPage() {
   className="flex gap-10 items-start"
   style={{ marginTop: "220px", maxWidth: "1200px", width: "100%" }}
 >
-      >
+   
         <div style={{ width: "500px" }}>
           <img
             src={selectedImage}
