@@ -57,18 +57,18 @@ function BestellenContent() {
       }}
     >
       <div
-        style={{
-          position: "absolute",
-          top: "30px",
-          maxwidth: "1200px",
-          display: "flex",
-          justifyContent: "center",
-          gap: "20px",
-          alignItems: "center",
-	  left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
+  style={{
+    position: "absolute",
+    top: "30px",
+    maxWidth: "1200px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    alignItems: "center",
+    left: "50%",
+    transform: "translateX(-50%)",
+  }}
+>
         <a href="/">
           <img src="/knop-home.png" alt="Home" style={{ height: "200px" }} />
         </a>
