@@ -1,51 +1,51 @@
 export default function HomePage() {
+  const buttons = [
+    { image: "/knop-home.png", href: "/" },
+    { image: "/knop-tshirts.png", href: "/t-shirts" },
+    { image: "/knop-hoodies.png", href: "/hoodies" },
+    { image: "/knop-tanktops.png", href: "/tanktops" },
+    { image: "/knop-jackets.png", href: "/jackets" },
+    { image: "/knop-caps.png", href: "/caps" },
+  ];
+
   return (
     <main
       style={{
-        height: "100vh",
+        minHeight: "100vh",
         width: "100%",
         backgroundImage: "url('/achtergrond.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        position: "relative",
+        margin: 0,
+        padding: 0,
       }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "30px",
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          gap: "20px",
           alignItems: "center",
+          gap: "20px",
+          paddingTop: "30px",
+          flexWrap: "wrap",
         }}
       >
-        {/* HOME */}
-        <a href="/">
-          <img src="/knop-home.png" alt="Home" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
-
-        <a href="/shop">
-          <img src="/knop-tshirts.png" alt="T-shirts" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
-
-        <a href="#">
-          <img src="/knop-hoodies.png" alt="Hoodies" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
-
-        <a href="#">
-          <img src="/knop-tanktops.png" alt="Tanktops" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
-
-        <a href="#">
-          <img src="/knop-jackets.png" alt="Jackets" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
-
-        <a href="#">
-          <img src="/knop-caps.png" alt="Caps" style={{ height: "200px", width: "auto", display: "block" }} />
-        </a>
+        {buttons.map((button, index) => (
+          <a key={index} href={button.href}>
+            <img
+              src={button.image}
+              alt=""
+              style={{
+                height: "80px",   // 👈 hier maak je ze groter/kleiner
+                width: "auto",
+                display: "block",
+                cursor: "pointer",
+              }}
+            />
+          </a>
+        ))}
       </div>
     </main>
   );
