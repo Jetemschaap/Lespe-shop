@@ -60,11 +60,13 @@ function BestellenContent() {
         style={{
           position: "absolute",
           top: "30px",
-          width: "100%",
+          maxwidth: "1200px",
           display: "flex",
           justifyContent: "center",
           gap: "20px",
           alignItems: "center",
+	  left: "50%",
+          transform: "translateX(-50%)",
         }}
       >
         <a href="/">
