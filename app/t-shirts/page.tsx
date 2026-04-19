@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function TshirtsPage() {
-  const [activeColor, setActiveColor] = useState<"zwart" | "rood" | "blauw" | "groen">("zwart");
+  const [activeImage, setActiveImage] = useState("/catalogus-shirts-zwart.png");
 
   const products = [
     {
@@ -34,14 +34,11 @@ export default function TshirtsPage() {
       image: "/products/tshirt-groen.png",
       catalogus: "/catalogus-shirts-groen.png",
     },
-  ] as const;
-
-  const activeProduct =
-    products.find((product) => product.id === activeColor) ?? products[0];
+  ];
 
   const topButtons = [
     { image: "/knop-home.png", href: "/" },
-    { image: "/knop-shirts.png", href: "/t-shirts" },
+    { image: "/knop-shirts.png", href: "/t-shirts" }, // ✅ deze zit er nu goed in
     { image: "/knop-hoodies.png", href: "/hoodies" },
     { image: "/knop-tanktops.png", href: "/tanktops" },
     { image: "/knop-jackets.png", href: "/jackets" },
@@ -58,7 +55,6 @@ export default function TshirtsPage() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         padding: "20px 30px 40px 30px",
-        boxSizing: "border-box",
       }}
     >
       {/* TOP KNOPPEN */}
@@ -78,8 +74,6 @@ export default function TshirtsPage() {
               alt=""
               style={{
                 height: "75px",
-                width: "auto",
-                display: "block",
                 cursor: "pointer",
               }}
             />
@@ -95,18 +89,15 @@ export default function TshirtsPage() {
           display: "grid",
           gridTemplateColumns: "1.3fr 1fr",
           gap: "40px",
-          alignItems: "start",
         }}
       >
         {/* GROTE FOTO LINKS */}
         <div>
           <img
-            src={activeProduct.catalogus}
+            src={activeImage}
             alt=""
             style={{
               width: "100%",
-              height: "auto",
-              display: "block",
               borderRadius: "6px",
             }}
           />
@@ -114,7 +105,7 @@ export default function TshirtsPage() {
 
         {/* RECHTS */}
         <div>
-          {/* LOGO (los, geen zwarte achtergrond) */}
+          {/* LOGO */}
           <div
             style={{
               display: "flex",
@@ -127,7 +118,6 @@ export default function TshirtsPage() {
               alt="logo"
               style={{
                 width: "260px",
-                height: "auto",
               }}
             />
           </div>
@@ -160,24 +150,19 @@ export default function TshirtsPage() {
                   <img
                     src={product.image}
                     alt=""
-                    style={{
-                      width: "100%",
-                      display: "block",
-                    }}
+                    style={{ width: "100%" }}
                   />
                 </div>
 
-                <div style={{ color: "white", fontSize: "15px" }}>
-                  {product.name}
-                </div>
-
-                <div style={{ color: "#ccc", fontSize: "14px", marginBottom: "10px" }}>
+                <div style={{ color: "white" }}>{product.name}</div>
+                <div style={{ color: "#ccc", marginBottom: "10px" }}>
                   {product.price}
                 </div>
 
                 <div style={{ display: "flex", gap: "8px" }}>
+                  {/* 🔥 HIER gebeurt het wisselen */}
                   <button
-                    onClick={() => setActiveColor(product.id)}
+                    onClick={() => setActiveImage(product.catalogus)}
                     style={{
                       flex: 1,
                       height: "38px",
