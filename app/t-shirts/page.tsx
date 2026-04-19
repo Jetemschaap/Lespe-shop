@@ -50,7 +50,7 @@ export default function TshirtsPage() {
       style={{
         minHeight: "100vh",
         width: "100%",
-        backgroundImage: "url('/achtergrond.png')",
+        backgroundImage: "url('/achtergrond-B.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
