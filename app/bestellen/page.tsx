@@ -67,7 +67,10 @@ function BestellenContent() {
     alignItems: "center",
     left: "50%",
     transform: "translateX(-50%)",
+    flexWrap: "nowrap",
+    overflow: "hidden",
   }}
+
 >
         <a href="/">
           <img src="/knop-home.png" alt="Home" style={{ height: "200px" }} />
