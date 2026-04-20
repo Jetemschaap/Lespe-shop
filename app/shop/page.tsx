@@ -66,7 +66,7 @@ export default function ShopPage() {
           <a href="/">
             <img src="/knop-home.png" style={{ height: "110px" }} />
           </a>
-          <img src="/knop-tshirts.png" style={{ height: "110px" }} />
+          <img src="/knop-shirts.png" style={{ height: "110px" }} />
           <img src="/knop-hoodies.png" style={{ height: "110px" }} />
           <img src="/knop-tanktops.png" style={{ height: "110px" }} />
           <img src="/knop-jackets.png" style={{ height: "110px" }} />
