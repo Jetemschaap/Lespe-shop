@@ -38,174 +38,136 @@ export default function ShopPage() {
 
   return (
     <main
-      className="min-h-screen text-white flex justify-center py-10"
       style={{
-        position: "relative",
-        backgroundImage: "url('/achtergrond.png')",
+        minHeight: "100vh",
+        backgroundImage: "url('/achtergrond-b.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        color: "white",
+        padding: "20px",
       }}
     >
       <div
         style={{
-          position: "absolute",
-          top: "30px",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          gap: "20px",
-          alignItems: "center",
+          maxWidth: "1400px",
+          margin: "0 auto",
         }}
       >
-        <a href="/">
-          <img
-            src="/knop-home.png"
-            alt="Home"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-
-        <a href="/shop">
-          <img
-            src="/knop-tshirts.png"
-            alt="T-shirts"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-
-        <a href="#">
-          <img
-            src="/knop-hoodies.png"
-            alt="Hoodies"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-
-        <a href="#">
-          <img
-            src="/knop-tanktops.png"
-            alt="Tanktops"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-
-        <a href="#">
-          <img
-            src="/knop-jackets.png"
-            alt="Jackets"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-
-        <a href="#">
-          <img
-            src="/knop-caps.png"
-            alt="Caps"
-            style={{ height: "200px", width: "auto", display: "block" }}
-          />
-        </a>
-      </div>
-
-      <div
-  className="flex gap-10 items-start"
-  style={{ marginTop: "220px", maxWidth: "1200px", width: "100%" }}
->
-   
-        <div style={{ width: "500px" }}>
-          <img
-            src={selectedImage}
-            alt="catalogus"
-            style={{
-              width: "100%",
-              height: "auto",
-              borderRadius: "20px",
-            }}
-          />
+        {/* NAVIGATIE */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "12px",
+            flexWrap: "wrap",
+            marginBottom: "30px",
+          }}
+        >
+          <a href="/">
+            <img src="/knop-home.png" style={{ height: "110px" }} />
+          </a>
+          <img src="/knop-tshirts.png" style={{ height: "110px" }} />
+          <img src="/knop-hoodies.png" style={{ height: "110px" }} />
+          <img src="/knop-tanktops.png" style={{ height: "110px" }} />
+          <img src="/knop-jackets.png" style={{ height: "110px" }} />
+          <img src="/knop-caps.png" style={{ height: "110px" }} />
         </div>
 
-        <div style={{ width: "450px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: "70px",
-            }}
-          >
+        {/* CONTENT */}
+        <div
+          style={{
+            display: "flex",
+            gap: "30px",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {/* LINKS FOTO */}
+          <div style={{ flex: "1 1 600px", maxWidth: "700px" }}>
             <img
-              src="/logo-wit.png"
-              alt="Le Spè logo"
-              style={{ height: "360px", width: "auto" }}
+              src={selectedImage}
+              style={{
+                width: "100%",
+                borderRadius: "20px",
+              }}
             />
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "16px",
-            }}
-          >
-            {products.map((product) => (
-              <div
-                key={product.id}
-                style={{
-                  background: "rgba(0,0,0,0.7)",
-                  padding: "10px",
-                  borderRadius: "15px",
-                }}
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  style={{ width: "100%", borderRadius: "10px" }}
-                />
+          {/* RECHTS PRODUCTEN */}
+          <div style={{ flex: "0 1 420px", width: "100%", maxWidth: "420px" }}>
+            {/* LOGO */}
+            <div style={{ textAlign: "center", marginBottom: "20px" }}>
+              <img src="/logo-wit.png" style={{ maxWidth: "250px" }} />
+            </div>
 
-                <div style={{ marginTop: "8px", fontSize: "14px" }}>
-                  {product.name}
-                </div>
-
-                <div style={{ color: "#aaa", fontSize: "14px" }}>
-                  {product.price}
-                </div>
-
-                <div style={{ display: "flex", gap: "6px", marginTop: "8px" }}>
-                  <button
-                    onClick={() => setSelectedImage(product.preview)}
+            {/* PRODUCT GRID */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "15px",
+              }}
+            >
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  style={{
+                    background: "rgba(0,0,0,0.7)",
+                    padding: "10px",
+                    borderRadius: "15px",
+                  }}
+                >
+                  <img
+                    src={product.image}
                     style={{
-                      flex: 1,
-                      border: "1px solid white",
-                      background: "transparent",
-                      color: "white",
-                      borderRadius: "20px",
-                      padding: "6px",
-                      cursor: "pointer",
+                      width: "100%",
+                      borderRadius: "10px",
                     }}
-                  >
-                    Bekijk
-                  </button>
+                  />
 
-                  <a
-                    href={`/bestellen?id=${product.id}`}
-                    style={{
-                      flex: 1,
-                      background: "white",
-                      color: "black",
-                      borderRadius: "20px",
-                      padding: "6px",
-                      border: "none",
-                      cursor: "pointer",
-                      textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    Koop
-                  </a>
+                  <div style={{ fontSize: "14px", marginTop: "6px" }}>
+                    {product.name}
+                  </div>
+
+                  <div style={{ fontSize: "13px", color: "#ccc" }}>
+                    {product.price}
+                  </div>
+
+                  <div style={{ display: "flex", gap: "6px", marginTop: "8px" }}>
+                    <button
+                      onClick={() => setSelectedImage(product.preview)}
+                      style={{
+                        flex: 1,
+                        background: "transparent",
+                        border: "1px solid white",
+                        color: "white",
+                        borderRadius: "999px",
+                        padding: "6px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Bekijk
+                    </button>
+
+                    <a
+                      href={`/bestellen?id=${product.id}`}
+                      style={{
+                        flex: 1,
+                        background: "white",
+                        color: "black",
+                        borderRadius: "999px",
+                        padding: "6px",
+                        textAlign: "center",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Koop
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
