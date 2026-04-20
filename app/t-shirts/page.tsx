@@ -38,7 +38,7 @@ export default function TshirtsPage() {
 
   const topButtons = [
     { image: "/knop-home.png", href: "/" },
-    { image: "/knop-shirts.png", href: "/shirts" }, // ✅ deze zit er nu goed in
+    { image: "/knop-shirts.png", href: "/t-shirts" }, // ✅ deze zit er nu goed in
     { image: "/knop-hoodies.png", href: "/hoodies" },
     { image: "/knop-tanktops.png", href: "/tanktops" },
     { image: "/knop-jackets.png", href: "/jackets" },
