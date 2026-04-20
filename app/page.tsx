@@ -1,7 +1,7 @@
 export default function HomePage() {
   const buttons = [
     { image: "/knop-home.png", href: "/" },
-    { image: "/knop-tshirts.png", href: "/t-shirts" },
+    { image: "/knop-shirts.png", href: "/t-shirts" },
     { image: "/knop-hoodies.png", href: "/hoodies" },
     { image: "/knop-tanktops.png", href: "/tanktops" },
     { image: "/knop-jackets.png", href: "/jackets" },
